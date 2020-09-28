@@ -33,10 +33,8 @@ def detect_and_predict_mask(frame,faceNet,maskNet):
       
             box=detections[0,0,i,3:7]*np.array([w,h,w,h])
             (startX,startY,endX,endY)=box.astype('int')
-        
             (startX,startY)=(max(0,startX),max(0,startY))
             (endX,endY)=(min(w-1,endX), min(h-1,endY))
-        
             face=frame[startY:endY, startX:endX]
             face=cv2.cvtColor(face,cv2.COLOR_BGR2RGB)
             face=cv2.resize(face,(224,224))
@@ -63,6 +61,8 @@ def run(request):
             color=(0,255,0) if label=='Mask' else (0,0,255)
             cv2.putText(frame,label,(startX,startY-10),cv2.FONT_HERSHEY_SIMPLEX,0.45,color,2)
             cv2.rectangle(frame,(startX,startY),(endX,endY),color,2)
+        
+        cv2.imwrite('D:/RMDAS/1.jpg', frame)    
         cv2.imshow("Frame",frame)
         key=cv2.waitKey(1) & 0xFF
         if key==ord('q'):
