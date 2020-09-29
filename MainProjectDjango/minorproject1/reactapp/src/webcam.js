@@ -100,6 +100,7 @@ class webcam extends React.Component{
     render(){
         return(
           <div>
+              <center><h1 style={{fontSize:"7em"}}> Watch Live </h1></center>
               {/* {
                     listOfImages.map(
                       (image, index) =>    <img key={index} src={image} alt="info" height="400" width="400" style={{margin:"10px"}}></img>
@@ -107,8 +108,9 @@ class webcam extends React.Component{
               } */}
               {/* <Component1 backgrounds={listOfImages}/> */}
               {/* setInterval(() => { */}
-              <img src={'../../../MinorProjectTest/MainProjectDjango/minorproject1/1.jpg'} alt="info"></img>
+              {/* <img src={'../../../MinorProjectTest/MainProjectDjango/minorproject1/1.jpg'} alt="info"></img> */}
               {/* }, 2000); */}
+              <img className="center" src={require('./images/1.jpg')} alt="info"></img>
           </div>
         )
     }

@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color:#586776 !important;
+  overflow: hidden;
 }
 
 code {
@@ -19,4 +20,15 @@ video{
   margin-left: 3vh;
   border-radius: 35px;
 
+}
+
+.center{
+  text-align: center;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding-top:60px;
+  border: black 2px solid;
+  /* border-radius: 25px; */
 }

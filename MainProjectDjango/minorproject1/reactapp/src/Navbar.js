@@ -35,7 +35,25 @@ function Navbar1() {
       width={1280}
       /> */}
               {/* <img src={require('../../../MinorProjectTest/MainProjectDjango/minorproject1/1.jpg')} alt="info"></img> */}
-              <img src={require('./images/1.jpg')} alt="info"></img>
+
+
+              <center><h1 style={{fontSize:"3em", marginTop:"20px", color:"whitesmoke"}} >Welcome to Real Time Face Mask Detection System</h1></center>
+            <div className="row" style={{textAlign:"center", marginLeft:"450px"}}>
+              <div style={{marginTop:"50px"}} className="card mb-4 col-6">
+                <h4 className="card-header">Admin Information</h4>
+                <ul className="list-group">
+                    <li className="list-group-item">
+                        <span className="badge badge-success mr-2">Name: Lakshy Gupta</span> 
+                    </li>
+                    <li className="list-group-item">
+                        <span className="badge badge-success mr-2">Email: lakshygupta99@gmail.com</span>
+                    </li>
+                    <li className="list-group-item">
+                        <span className="badge badge-danger mr-2">Admin Panel</span>
+                    </li>
+                </ul>
+            </div>
+            </div>
       </>
     );
   }
