@@ -1,4 +1,5 @@
-from django.shortcuts import render,HttpResponse
+
+import time
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 from tensorflow.keras.preprocessing.image import img_to_array
 from tensorflow.keras.models import load_model
@@ -48,7 +49,7 @@ def detect_and_predict_mask(frame,faceNet,maskNet):
         return (locs,preds)
         
 def run():
-    
+    time.sleep(3)
     vs=VideoStream(src=0).start()
     while True:
         frame=vs.read()
@@ -62,6 +63,7 @@ def run():
             cv2.putText(frame,label,(startX,startY-10),cv2.FONT_HERSHEY_SIMPLEX,0.45,color,2)
             cv2.rectangle(frame,(startX,startY),(endX,endY),color,2)
         
+	
         cv2.imwrite('1.jpg', frame)    
         cv2.imshow("Frame",frame)
         key=cv2.waitKey(1) & 0xFF
@@ -70,6 +72,5 @@ def run():
     cv2.destroyAllWindows()
     vs.stop()
     vs.stream.release()
-    return HttpResponse("hello")
 
 run()

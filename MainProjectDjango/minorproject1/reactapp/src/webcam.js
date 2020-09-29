@@ -85,7 +85,7 @@
 // </div></>
 //     )
 // }
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import Component1 from './Imageloader'
 var listOfImages =[];
@@ -97,7 +97,35 @@ class webcam extends React.Component{
     // componentWillMount() {
     //     listOfImages = this.importAll(require.context('../../../MinorProjectTest/MainProjectDjango/minorproject1/1.jpg', false, /\.(png|jpe?g|svg)$/));
     // }
+    
+    constructor(props){
+      super(props)
+  
+      this.state = {
+        time: 0,
+       
+        
+      }        
+    }
+    updateMe() {
+
+      setInterval(()=>{this.setState({src:this.state.time+1})},6000);
+      console.log(this.state.time);    
+    }
+    
+    
+   
     render(){
+        this.updateMe();
+        try {
+          // a path we KNOW is totally bogus and not a module
+          var src = require('./images/1.jpg');
+         }
+         catch (e) {
+          console.log('oh no big error')
+          console.log(e)
+         }
+        
         return(
           <div>
               <center><h1 style={{fontSize:"7em"}}> Watch Live </h1></center>
@@ -110,7 +138,8 @@ class webcam extends React.Component{
               {/* setInterval(() => { */}
               {/* <img src={'../../../MinorProjectTest/MainProjectDjango/minorproject1/1.jpg'} alt="info"></img> */}
               {/* }, 2000); */}
-              <img className="center" src={require('./images/1.jpg')} alt="info"></img>
+              <img className="center" src={src} alt='info'></img>
+              
           </div>
         )
     }
