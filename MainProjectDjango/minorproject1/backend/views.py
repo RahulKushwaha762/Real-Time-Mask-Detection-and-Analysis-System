@@ -9,6 +9,10 @@ from imutils.video import VideoStream
 from os.path import dirname, join
 import imutils
 from django.views.decorators import gzip
+from .models import Mask
+import datetime
+from datetime import datetime
+from time import gmtime, strftime
 
 protoPath = join(dirname(__file__), "deploy.prototxt")
 weightPath = join(dirname(__file__), "res10_300x300_ssd_iter_140000.caffemodel")
@@ -32,7 +36,7 @@ class VideoCamera(object):
 
     def get_frame(self):
         #ret,image = self.video.read()
-        
+        value = 0
         ret,frame=self.video.read()
         frame=imutils.resize(frame,width=400)
         (locs,preds)=detect_and_predict_mask(frame,faceNet,maskNet)
@@ -40,9 +44,24 @@ class VideoCamera(object):
             (startX,startY,endX,endY)=box
             (mask,withoutMask)=pred
             label='Mask' if mask>withoutMask else 'No Mask'
+            obj = Mask()
+            if(label=='Mask'):
+                value = 1
+                obj.with_mask = value
+                obj.without_mask = 0
+            else:
+                obj.without_mask = 1
+                obj.with_mask = 0    
+            day_of_week = datetime.today().strftime('%A')    
+            date_time = strftime("%Y-%m-%d %H:%M:%S", gmtime())
+            print(day_of_week,date_time,value)
+            obj.date_time = date_time
+            obj.day_week = day_of_week
+            obj.save()
             color=(0,255,0) if label=='Mask' else (0,0,255)
             cv2.putText(frame,label,(startX,startY-10),cv2.FONT_HERSHEY_SIMPLEX,0.45,color,2)
             cv2.rectangle(frame,(startX,startY),(endX,endY),color,2)
+            print(value)
         
         #cv2.imwrite('1.jpg', frame)    
         #cv2.imshow("Frame",frame)
