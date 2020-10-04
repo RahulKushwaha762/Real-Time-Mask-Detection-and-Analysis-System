@@ -27,6 +27,21 @@ from django.shortcuts import render
 from django.http import HttpResponse,StreamingHttpResponse
 import cv2
 import time
+from rest_framework import generics
+from .models import Mask
+from .serializers import MaskSerializer
+
+
+class ListTodo(generics.ListCreateAPIView):
+    queryset = Mask.objects.all()
+    serializer_class = MaskSerializer
+
+
+class DetailTodo(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Mask.objects.all()
+    serializer_class = MaskSerializer
+
+
 
 class VideoCamera(object):
     def __init__(self):

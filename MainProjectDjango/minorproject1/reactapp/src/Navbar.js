@@ -14,7 +14,7 @@ function Navbar1() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Link href="/webcamlive" to="/webcamlive">Watch Live</Nav.Link>
-            <Nav.Link href="#pricing">Detailed Report </Nav.Link>
+            <Nav.Link href="/detailedreport">Detailed Report </Nav.Link>
             <Nav.Link href="#donate">Donate </Nav.Link>
             <Nav.Link href="#help">Help </Nav.Link>
             <Nav.Link href="#about">About </Nav.Link>
