@@ -47,11 +47,11 @@
    
 .my-tbody {
   height:auto;
-  display:flex;
+  display:block;
   overflow-y:scroll;
-  align-items: initial;
   width:100%;
 }
+
 
 tbody {
   width: 100%;
