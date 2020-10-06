@@ -5,12 +5,14 @@ import Content from "./Content";
 
 class Detail extends Component {
   state = {
-    todos: []
+    todos: [],
+    lengths:0,
   };/*    This is where the magic happens*/
     async componentDidMount() {
     try {
       const res = await fetch('http://127.0.0.1:8000/api'); // fetching the data from api, before the page loaded
       const todos = await res.json();
+      
       this.setState({
         todos
       });
@@ -20,8 +22,12 @@ class Detail extends Component {
   }
 
   render() {
+ 
+    const visits = this.state.todos.length;
+    
     return (
-      /*<div>
+      /*
+      <div>
         hello
         {this.state.todos.map(item => (
           <div key={item.id}>
@@ -29,7 +35,8 @@ class Detail extends Component {
           </div>
         ))}
       </div>
-      */
+     */
+     
       <Grid container direction="column">    
       <Grid item>
         <Header/>
@@ -37,11 +44,12 @@ class Detail extends Component {
       <Grid item container>
         <Grid item xs={0} sm={2}/>
         <Grid item xs={12} sm={8}>
-          <Content/>
+          <Content visits={visits} />
         </Grid>
         <Grid item xs={0} sm={2}/>
       </Grid>
     </Grid>
+    
     );
   }
 }

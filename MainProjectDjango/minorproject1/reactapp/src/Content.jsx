@@ -6,6 +6,8 @@ import { Grid } from '@material-ui/core';
 
 var Chartist = require("chartist");
 
+  
+
 const weeklyVisitChart = {
   data: {
     labels: ["M", "T", "W", "T", "F", "S", "S"],
@@ -39,14 +41,14 @@ const weeklyVisitChart = {
   }
  };
 
-const Content = () => {
+const Content = (props) => {
 	return (
 		<Grid container spacing={4}>
 			<Grid item xs={12} sm={4}>
 				<BasicCard 
 				title={"Visits"} 
 				subtitle={"Monday, 6th October"}
-				number="231"
+				number={props.visits}
 				description="12% more visits than yesterday"/>
 			</Grid>
 			<Grid item xs={12} sm={4}>

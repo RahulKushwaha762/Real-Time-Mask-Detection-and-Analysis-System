@@ -33,6 +33,7 @@ const Header = () => {
 			    <Button color="inherit" href="/">Home Page</Button>
 			    <Button color="inherit" href="/detailedreport">Detailed Report</Button>
 			    <Button color="inherit" href="/webcamlive" to="/webcamlive">Watch Live</Button>
+				<Button color="inherit" href="/log" to="/log">Log</Button>
 			    <Button color="inherit">Donate</Button>
 			    <Button color="inherit">Help</Button>
 			    <Button color="inherit">About</Button>
