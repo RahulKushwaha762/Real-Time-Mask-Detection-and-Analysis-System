@@ -35,8 +35,7 @@ class Log extends Component {
       <th scope="col">Date and Time</th>
     </tr>
   </thead>
-  <tbody>
-
+  <tbody >
          {this.state.todos.map(item => (
           //<div key={item.id}>
             //<h1>{item.day_week}</h1>

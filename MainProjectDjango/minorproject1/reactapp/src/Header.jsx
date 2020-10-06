@@ -37,7 +37,7 @@ const Header = () => {
 			    <Button color="inherit">Donate</Button>
 			    <Button color="inherit">Help</Button>
 			    <Button color="inherit">About</Button>
-			    <Button color="inherit">Contact</Button>
+			    <Button color="inherit" href="/contact" to="/contact">Contact</Button>
 			  </Toolbar>
 			</AppBar>
 		);

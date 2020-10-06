@@ -46,9 +46,10 @@
 }
    
 .my-tbody {
-  height:600px;
-  display:block;
+  height:auto;
+  display:flex;
   overflow-y:scroll;
+  align-items: initial;
   width:100%;
 }
 
