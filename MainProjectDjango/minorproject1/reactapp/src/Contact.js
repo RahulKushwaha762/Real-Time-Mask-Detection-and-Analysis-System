@@ -24,7 +24,7 @@ class Contact extends React.Component {
       return (
         <div>
         <Header/>
-  <div className="App">
+  <div style={{ overflowY: 'scroll', height: 'calc(100vh - 127px)' }} className="App">
       
       <div className="container">
       <h1>Need some help?</h1>
@@ -48,6 +48,8 @@ class Contact extends React.Component {
         <input type="submit" onClick={e=>this.handleFormSubmit(e)} value="Submit"></input>
       </form>
       </div>
+      <br></br>
+      <br></br>
       <p>For further queries contact us on..</p>
       <center><a href="varshneytanya16@gmail.com">varshneytanya16@gmail.com</a></center>
     </div>

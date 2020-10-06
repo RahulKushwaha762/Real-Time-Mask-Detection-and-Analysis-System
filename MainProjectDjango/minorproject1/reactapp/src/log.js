@@ -24,7 +24,7 @@ class Log extends Component {
     const visits = this.state.todos.length;
     
     return (
-  <div id ='#collapse1' >
+  <div  style={{ overflowY: 'scroll', height: 'calc(130vh - 127px)' }}>
     <Header/>
     <table class="table table-bordered table-dark my-tbody">
     <thead>
@@ -36,6 +36,7 @@ class Log extends Component {
     </tr>
   </thead>
   <tbody >
+ 
          {this.state.todos.map(item => (
           //<div key={item.id}>
             //<h1>{item.day_week}</h1>

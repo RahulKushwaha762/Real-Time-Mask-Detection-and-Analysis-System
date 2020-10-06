@@ -36,31 +36,3 @@
     transform: rotate(360deg);
   }
 }
-#collapse1{
-  overflow-y:scroll;
-  height:200px;
-}
-.tbody {
-  height: 50px !important;
-  overflow-y: scroll;	
-}
-   
-.my-tbody {
-  height:auto;
-  display:block;
-  overflow-y:scroll;
-  width:100%;
-}
-
-
-tbody {
-  width: 100%;
-}
-
-tr {
-  width: 100%;
-}
-
-td {
-  width: 33.33%;
-}
