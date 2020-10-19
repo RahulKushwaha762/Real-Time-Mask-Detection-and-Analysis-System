@@ -26,28 +26,34 @@ class Log extends Component {
     return (
   <div  style={{ overflowY: 'scroll', height: 'calc(130vh - 127px)' }}>
     <Header/>
-    <table class="table table-bordered table-dark my-tbody">
+    <table class="table table-bordered table my-tbody">
     <thead>
     <tr>
-      <th scope="col">#</th>
       <th scope="col">WithMask</th>
       <th scope="col">Day</th>
       <th scope="col">Date and Time</th>
     </tr>
   </thead>
   <tbody >
- 
+  
+
          {this.state.todos.map(item => (
           //<div key={item.id}>
             //<h1>{item.day_week}</h1>
           //</div>
-          <tr>
-              <th scope="row">{item.id}</th>
-              <td>{item.with_mask}</td>
+          <tr class={"table-"+(item.with_mask?"success":"danger")}>
+              <td>  {(() => {
+        switch (item.with_mask) {
+          case 1:   return "Mask Present";
+          case 0: return "Mask Not Present";
+          default:      return "#FFFFFF";
+        }
+      })()}</td>
               <td>{item.day_week}</td>
               <td>{item.date_time}</td>
           </tr>
         ))}
+   
   </tbody>
         
         </table>
