@@ -24,4 +24,5 @@ urlpatterns = [
     path('detailedreport/',TemplateView.as_view(template_name='index.html')),
     path('log/',TemplateView.as_view(template_name='index.html')),
     path('contact/',TemplateView.as_view(template_name='index.html')),
+    path('donate/',TemplateView.as_view(template_name='index.html')),
 ]

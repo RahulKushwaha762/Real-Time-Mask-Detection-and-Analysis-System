@@ -68,7 +68,7 @@ class VideoCamera(object):
                 obj.without_mask = 1
                 obj.with_mask = 0    
             day_of_week = datetime.today().strftime('%A')    
-            date_time = strftime("%Y-%m-%d %H:%M:%S", gmtime())
+            date_time = strftime("%Y-%m-%d %H:%M:%S")
             print(day_of_week,date_time,value)
             obj.date_time = date_time
             obj.day_week = day_of_week
