@@ -5,6 +5,7 @@ import Webcam from '../src/webcam';
 import Detail from './DetailedReport'
 import Log from    './log'
 import Contact from './Contact'
+import Donate from './Donate'
 
 function Routes() {
     return (
@@ -15,6 +16,7 @@ function Routes() {
                 <Route path="/detailedreport" exact component={Detail} />
                 <Route path="/log" exact component={Log} />
                 <Route path="/contact" exact component={Contact} />
+                <Route path="/donate" exact component={Donate} />
             </Switch>
         </BrowserRouter>
     )
