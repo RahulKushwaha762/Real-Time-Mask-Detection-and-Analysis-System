@@ -53,18 +53,19 @@ const Content = (props) => {
 			</Grid>
 			<Grid item xs={12} sm={4}>
 				<BasicCard 
-				title={"Weekly Visits"} 
+				title={"People with Mask"} 
 				subtitle={"23rd Sept - 3rd Oct"}
-				number="623"
+				number={props.withMask}
 				description="47% increase than the previous week"/>
 			</Grid>
 			<Grid item xs={12} sm={4}>
 				<BasicCard 
-				title={"Monthly Visits"} 
+				title={"People with No Mask"} 
 				subtitle={"1st Sept - 30th Sept"}
-				number="12214"
+				number={props.noMask}
 				description="Moderately Crowded"/>
 			</Grid>
+			
 			<Grid item xs={12} sm={4}>
 				<ChartCard 
 				title={"Last Week"} 
@@ -77,11 +78,11 @@ const Content = (props) => {
 			</Grid>
 			<Grid item xs={12} sm={4}>
 				<ChartCard 
-				title={"Last Week"} 
+				title={"Ratio"} 
 				subtitle={"1st Sept - 30th Sept"}
-				number="623"
+				number={props.visits}
 				description="Moderately Crowded"
-				data={maskData.data}
+				data={props.maskdata.data}
 				options={maskData.options}
 				type={"Pie"}/>
 			</Grid>
@@ -94,6 +95,20 @@ const Content = (props) => {
 				data={weeklyVisitChart.data}
 				options={weeklyVisitChart.options}
 				type={"Bar"}/>
+			</Grid>
+			<Grid item xs={12} sm={4}>
+				<BasicCard 
+				title={"Weekly Visits"} 
+				subtitle={"1st Sept - 30th Sept"}
+				number='200'
+				description="Moderately Crowded"/>
+			</Grid>
+			<Grid item xs={12} sm={4}>
+				<BasicCard 
+				title={"Monthly Visits"} 
+				subtitle={"1st Sept - 30th Sept"}
+				number='221'
+				description="Moderately Crowded"/>
 			</Grid>
 		</Grid>
 			
