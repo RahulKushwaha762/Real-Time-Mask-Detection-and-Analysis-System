@@ -6,6 +6,7 @@ import Detail from './DetailedReport'
 import Log from    './log'
 import Contact from './Contact'
 import Donate from './Donate'
+import Help from './help'
 
 function Routes() {
     return (
@@ -17,6 +18,7 @@ function Routes() {
                 <Route path="/log" exact component={Log} />
                 <Route path="/contact" exact component={Contact} />
                 <Route path="/donate" exact component={Donate} />
+                <Route path="/help" exact component={Help} />
             </Switch>
         </BrowserRouter>
     )

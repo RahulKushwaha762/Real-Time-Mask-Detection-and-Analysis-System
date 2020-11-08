@@ -1,0 +1,78 @@
+*{
+  box-sizing: border-box;
+}
+.body{
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+}
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: -185px;
+}
+
+
+.container .box{
+  position: relative;
+  width: 350px;
+  padding: 40px;
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .1); 
+  border-radius: 4px;
+  margin: 20px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  
+}
+a{
+  display: inline;
+  padding: 10px 95px;
+  background: darkblue;
+  border-radius: 4px;
+  color: #fff;
+}
+h1{
+  text-align: center;
+  margin-top: 55px;
+  font-weight: 550;
+}
+h3{
+  text-align: center;
+  
+}
+input[type=text], input[type=email], select, textarea{
+  width: 50%;
+  padding: 12px;
+  border: 1px solid;
+  border-radius: 18px;
+  box-sizing: border-box;
+  margin-top: 35px;
+  margin-bottom: 16px;
+  margin-left: 375px;
+  resize: vertical;
+  
+}
+p{
+  text-align: center;
+}
+input[type="submit"]{
+  background-color: #000099;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-size: medium;
+  margin-top: 25px;
+}
+input[type=submit]:hover {
+  background-color: #004c99;
+}
+

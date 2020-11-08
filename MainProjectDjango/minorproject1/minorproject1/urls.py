@@ -25,4 +25,5 @@ urlpatterns = [
     path('log/',TemplateView.as_view(template_name='index.html')),
     path('contact/',TemplateView.as_view(template_name='index.html')),
     path('donate/',TemplateView.as_view(template_name='index.html')),
+    path('help/',TemplateView.as_view(template_name='index.html')),
 ]

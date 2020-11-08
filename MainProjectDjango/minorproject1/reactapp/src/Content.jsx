@@ -68,18 +68,18 @@ const Content = (props) => {
 			
 			<Grid item xs={12} sm={4}>
 				<ChartCard 
-				title={"Last Week"} 
-				subtitle={"1st Sept - 30th Sept"}
-				number="623"
+				title={"Day wise having no mask"} 
+				subtitle={"Week Days"}
+				number={props.visits}
 				description="Moderately Crowded"
-				data={weeklyVisitChart.data}
-				options={weeklyVisitChart.options}
+				data={props.weeklyVisitChart.data}
+				options={props.weeklyVisitChart.options}
 				type={"Line"}/>
 			</Grid>
 			<Grid item xs={12} sm={4}>
 				<ChartCard 
 				title={"Ratio"} 
-				subtitle={"1st Sept - 30th Sept"}
+				subtitle={"Mask vs No Mask Overall"}
 				number={props.visits}
 				description="Moderately Crowded"
 				data={props.maskdata.data}
@@ -88,28 +88,15 @@ const Content = (props) => {
 			</Grid>
 			<Grid item xs={12} sm={4}>
 				<ChartCard 
-				title={"Last Week"} 
-				subtitle={"1st Sept - 30th Sept"}
-				number="623"
+				title={"Day wise having no mask"} 
+				subtitle={"Week days"}
+				number={props.visit}
 				description="Moderately Crowded"
-				data={weeklyVisitChart.data}
-				options={weeklyVisitChart.options}
+				data={props.weeklyVisitChart.data}
+				options={props.weeklyVisitChart.options}
 				type={"Bar"}/>
 			</Grid>
-			<Grid item xs={12} sm={4}>
-				<BasicCard 
-				title={"Weekly Visits"} 
-				subtitle={"1st Sept - 30th Sept"}
-				number='200'
-				description="Moderately Crowded"/>
-			</Grid>
-			<Grid item xs={12} sm={4}>
-				<BasicCard 
-				title={"Monthly Visits"} 
-				subtitle={"1st Sept - 30th Sept"}
-				number='221'
-				description="Moderately Crowded"/>
-			</Grid>
+		
 		</Grid>
 			
 		);
