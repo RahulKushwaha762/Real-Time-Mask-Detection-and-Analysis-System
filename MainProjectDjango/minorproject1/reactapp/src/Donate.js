@@ -14,6 +14,7 @@ import Button from '@material-ui/core/Button';
 import CheckList from "./assets/images/checklistBoard.png"
 import health from './assets/images/goodHealth.png';
 import corona from './assets/images/coronaVirus.png';
+import './Donate.css';
 
 const TextTypography = withStyles({
     root: {
@@ -32,7 +33,7 @@ const TextTypography = withStyles({
       maxWidth: 345,
     },
     media: {
-      height: 0,
+      height: '13px',
       paddingTop:'100%'
     },
   });
@@ -61,7 +62,7 @@ export default function Donate() {
                         title="Check First "
                         />
                         <CardContent>
-                        <Typography variant="body2" color="textSecondary" component="p">
+                        <Typography variant="body2"  component="p">
                         You are at least 17 years old and weigh 110 lbs. Additional weight requirements apply for donors age 18 or younger.
                         </Typography>
                         </CardContent>
@@ -78,7 +79,7 @@ export default function Donate() {
                         title="Check Second "
                         />
                         <CardContent>
-                        <Typography variant="body2" color="textSecondary" component="p">
+                        <Typography variant="body2" component="p">
                         In good health. You generally feel well, even if you're being treated for a chronic condition.
                         </Typography>
                         </CardContent>
@@ -95,7 +96,7 @@ export default function Donate() {
                         title="Check Third "
                         />
                         <CardContent>
-                        <Typography variant="body2" color="textSecondary" component="p">
+                        <Typography variant="body2" color="textPrimary" component="p">
                         Have a prior, verified diagnosis of COVID-19, but are now symptom free.
                         </Typography>
                         </CardContent>
@@ -103,6 +104,9 @@ export default function Donate() {
                     </Card>
                 </Grid>
             </Grid>
+            <Typography style={{paddingTop:"40px"}} align='center' variant = 'h4'> Please Fill the form below to donate HELP COVID-19 Patients </Typography>
+            <RedTypography style={{paddingTop:"30px", padding:"30px"}} align='center' variant='h6'> (We DO NOT keep any of your information with us. It is directly shared with The State Government.)</RedTypography>
+            <center><iframe src="https://docs.google.com/forms/d/e/1FAIpQLSemb6_XQe9zrMYTm5qZYFpRu62e7d9ysX7cldqhOJlcB00TcA/viewform?embedded=true" width="640" height="1000" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></center>
         </>
     )
 }
