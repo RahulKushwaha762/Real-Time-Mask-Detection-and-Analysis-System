@@ -9,5 +9,6 @@ class MaskSerializer(serializers.ModelSerializer):
             'date_time',
             'with_mask',
             'without_mask',
+            'age'
         )
         model = Mask

@@ -53,4 +53,6 @@ a{
 }
 label{
   display: flex;
+  margin-top: 20px !important;
+  margin-bottom: 0 !important;
 }

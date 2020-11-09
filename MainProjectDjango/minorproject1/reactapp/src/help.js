@@ -35,7 +35,7 @@ class Help extends React.Component {
           <div className = "content">
             <h3 style={{overflow:'hidden'}}>How to use software?</h3>
             <p>This software is used to detect mask. With the help of log section we can check daily analysis. Proper working of camera is important. </p>
-              <input type="submit" onClick= " " value="Read More"></input>
+              {/* <input type="submit" onClick= " " value="Read More"></input> */}
           </div>
         </div>
         </div>
@@ -47,7 +47,7 @@ class Help extends React.Component {
           <div className = "content">
             <h3 style={{overflow:'hidden'}}>What we can do?</h3>
             <p>With this software we can daily and monthly analyze. We can also identify the individuals who are not wearing a mask and save their details. </p>
-              <input type="submit" onClick= " " value="Read More"></input>
+              {/* <input type="submit" onClick= " " value="Read More"></input> */}
           </div>
         </div>
         </div>
@@ -58,7 +58,7 @@ class Help extends React.Component {
           <div className = "content">
             <h3 style={{overflow:'hidden'}}>Further queries</h3>
             <p>For further queries you can contact us through contact page and through mail. We try to reach you as soon as possible and resolve your query.</p>
-            <input type="submit" onClick= " " value="Read More"></input>
+            {/* <input type="submit" onClick= " " value="Read More"></input> */}
           </div>
         </div>
       </div>

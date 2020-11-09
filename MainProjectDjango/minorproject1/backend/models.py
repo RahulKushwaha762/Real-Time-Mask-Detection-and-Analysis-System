@@ -6,6 +6,7 @@ class Mask(models.Model):
     date_time = models.CharField(max_length=50,null=False,default='')
     day_week = models.CharField(max_length=50,null=False,default='')
     name = models.CharField(max_length=20,null=False,default='')
+    age = models.CharField(max_length=20,null=False,default='')
     def __str__(self):
          title = self.date_time + ' '+ self.day_week
          return title

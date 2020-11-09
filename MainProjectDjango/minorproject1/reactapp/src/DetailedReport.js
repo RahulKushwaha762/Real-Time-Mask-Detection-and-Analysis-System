@@ -8,12 +8,11 @@ var Chartist = require("chartist");
 
 
 
-
 const loadingMessage = () => {
   return (
     1 && (
         <div className="alert alert-info">
-            <h2>Loading... Have Patience !</h2>
+            <h2>Calculating... Have Patience !</h2>
         </div>
     )
   );
@@ -32,6 +31,9 @@ class Detail extends Component {
     s:0,
     su:0,
     loading:0,
+    low:0,
+    medium:0,
+    high:0,
 
   };/*    This is where the magic happens*/
     async componentDidMount() {
@@ -56,6 +58,25 @@ class Detail extends Component {
       else{
         this.setState({
           withoutmaskvisits :this.state.withoutmaskvisits + 1
+        });
+      }
+      console.log(item.age);
+      if(item.age=='Medium')
+      {
+        this.setState({
+          medium :this.state.medium + 1
+        });
+      }
+      else if(item.age=='Low')
+      {
+        this.setState({
+          low :this.state.low + 1
+        });
+      }
+      else if(item.age=='High')
+      {
+        this.setState({
+          high :this.state.high + 1
         });
       }
       if(item.day_week=='Monday' )
@@ -172,6 +193,18 @@ class Detail extends Component {
        labelDirection:'explode'
      }
     };
+    const ageGroup = {
+      data: {
+       labels: ["Low","Medium","High"],
+       series: [this.state.low,this.state.medium,this.state.high]
+     },
+     options: {
+       donut:true,
+       donutWidth: 20,
+       startAngle:270,
+       labelDirection:'explode'
+     }
+    };
     
     return (
       /*
@@ -193,8 +226,9 @@ class Detail extends Component {
       <Grid item container>
         <Grid item xs={0} sm={2}/>
         <Grid item xs={12} sm={8}>
-          <Content visits={visits} withMask={withMask} noMask = {noMask} maskdata = {maskData} weeklyVisitChart = {weeklyVisitChart} />
+          <Content visits={visits} withMask={withMask} noMask = {noMask} maskdata = {maskData} ageGroup = {ageGroup} weeklyVisitChart = {weeklyVisitChart} />
         </Grid>
+        <Grid item xs={0} sm={2}/>
         <Grid item xs={0} sm={2}/>
         
       </Grid>

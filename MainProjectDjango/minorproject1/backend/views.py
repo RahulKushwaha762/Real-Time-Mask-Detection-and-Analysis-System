@@ -80,6 +80,7 @@ class VideoCamera(object):
             print(day_of_week,date_time,value)
             obj.date_time = date_time
             obj.day_week = day_of_week
+            obj.age = age
             obj.save()
             color=(0,255,0) if label=='Mask' else (0,0,255)
             cv2.putText(frame, 'Age: '+age, (startX,startY-30), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0,255,0), 2, cv2.LINE_AA)

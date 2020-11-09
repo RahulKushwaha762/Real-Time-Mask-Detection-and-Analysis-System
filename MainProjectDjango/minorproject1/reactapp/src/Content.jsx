@@ -49,19 +49,19 @@ const Content = (props) => {
 				title={"Visits"} 
 				subtitle={"Monday, 6th October"}
 				number={props.visits}
-				description="12% more visits than yesterday"/>
+				description=""/>
 			</Grid>
 			<Grid item xs={12} sm={4}>
 				<BasicCard 
 				title={"People with Mask"} 
 				subtitle={"23rd Sept - 3rd Oct"}
 				number={props.withMask}
-				description="47% increase than the previous week"/>
+				description=""/>
 			</Grid>
 			<Grid item xs={12} sm={4}>
 				<BasicCard 
 				title={"People with No Mask"} 
-				subtitle={"1st Sept - 30th Sept"}
+				subtitle={"Monthly"}
 				number={props.noMask}
 				description="Moderately Crowded"/>
 			</Grid>
@@ -95,6 +95,16 @@ const Content = (props) => {
 				data={props.weeklyVisitChart.data}
 				options={props.weeklyVisitChart.options}
 				type={"Bar"}/>
+			</Grid>
+			<Grid item xs={12} sm={4}>
+				<ChartCard 
+				title={"Age Group"} 
+				subtitle={"Low vs Medium vs High"}
+				number={props.visits}
+				description="Moderately Crowded"
+				data={props.ageGroup.data}
+				options={maskData.options}
+				type={"Pie"}/>
 			</Grid>
 		
 		</Grid>
