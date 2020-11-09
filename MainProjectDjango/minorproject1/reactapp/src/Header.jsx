@@ -42,7 +42,7 @@ const Header = () => {
 				<Button color="inherit" href="/log" to="/log">Log</Button>
 			    <Button color="inherit" href="/donate" to="/donate">Donate</Button>
 			    <Button color="inherit" href="/help" to="/help">Help</Button>
-			    <Button color="inherit">About</Button>
+			{/* 	<Button color="inherit">About</Button> */}
 			    <Button color="inherit" href="/contact" to="/contact">Contact</Button>
 			  </Toolbar>
 			</AppBar>

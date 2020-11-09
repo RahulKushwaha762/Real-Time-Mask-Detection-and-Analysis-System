@@ -17,6 +17,14 @@ from time import gmtime, strftime
 protoPath = join(dirname(__file__), "deploy.prototxt")
 weightPath = join(dirname(__file__), "res10_300x300_ssd_iter_140000.caffemodel")
 modelPath = join(dirname(__file__), "mobilenet_v2.model")
+
+ageProto=join(dirname(__file__), "age_deploy.prototxt")
+ageModel=join(dirname(__file__), "age_net.caffemodel")
+ageNet=cv2.dnn.readNet(ageModel,ageProto)
+MODEL_MEAN_VALUES=(78.4263377603, 87.7689143744, 114.895847746)
+ageList=['Low', 'Low', 'Low', 'Medium', 'Medium', 'High', 'High', 'High']
+genderList=['Male','Female']
+
 prototxtPath=protoPath 
 weightsPath=weightPath
 faceNet=cv2.dnn.readNet(prototxtPath,weightsPath)
@@ -54,7 +62,7 @@ class VideoCamera(object):
         value = 0
         ret,frame=self.video.read()
         frame=imutils.resize(frame,width=400)
-        (locs,preds)=detect_and_predict_mask(frame,faceNet,maskNet)
+        (locs,preds,age)=detect_and_predict_mask(frame,faceNet,maskNet)
         for (box,pred) in zip(locs,preds):
             (startX,startY,endX,endY)=box
             (mask,withoutMask)=pred
@@ -74,6 +82,7 @@ class VideoCamera(object):
             obj.day_week = day_of_week
             obj.save()
             color=(0,255,0) if label=='Mask' else (0,0,255)
+            cv2.putText(frame, 'Age: '+age, (startX,startY-30), cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0,255,0), 2, cv2.LINE_AA)
             cv2.putText(frame,label,(startX,startY-10),cv2.FONT_HERSHEY_SIMPLEX,0.45,color,2)
             cv2.rectangle(frame,(startX,startY),(endX,endY),color,2)
             print(value)
@@ -105,8 +114,17 @@ def index(request):
 
 def detect_and_predict_mask(frame,faceNet,maskNet):
     (h,w)=frame.shape[:2]
+    #Imgproc.cvtColor(frame, frame, Imgproc.COLOR_RGBA2BGR)
+    #frame = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
     blob=cv2.dnn.blobFromImage(frame,1.0,(300,300),(104.0,177.0,123.0))
+    blob2=cv2.dnn.blobFromImage(frame, 1.0, (227,227), MODEL_MEAN_VALUES, swapRB=False)
     faceNet.setInput(blob)
+
+    ageNet.setInput(blob2)
+    agePreds=ageNet.forward()
+    age=ageList[agePreds[0].argmax()]
+    print('Age '+age)
+
     detections=faceNet.forward()
     faces=[]
     locs=[]
@@ -130,7 +148,7 @@ def detect_and_predict_mask(frame,faceNet,maskNet):
         if len(faces)>0:
             faces=np.array(faces,dtype='float32')
             preds=maskNet.predict(faces,batch_size=12)
-        return (locs,preds)
+        return (locs,preds,age)
         
 def run(request):
     
