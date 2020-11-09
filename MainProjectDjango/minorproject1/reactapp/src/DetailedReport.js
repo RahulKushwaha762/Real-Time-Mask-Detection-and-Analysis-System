@@ -2,8 +2,22 @@ import React, { Component } from 'react';
 import { Grid } from '@material-ui/core';
 import Header from "./Header";
 import Content from "./Content";
+import {useState} from "react";
+
 var Chartist = require("chartist");
 
+
+
+
+const loadingMessage = () => {
+  return (
+    1 && (
+        <div className="alert alert-info">
+            <h2>Loading... Have Patience !</h2>
+        </div>
+    )
+  );
+};
 class Detail extends Component {
   state = {
     todos: [],
@@ -17,11 +31,13 @@ class Detail extends Component {
     f:0,
     s:0,
     su:0,
+    loading:0,
 
   };/*    This is where the magic happens*/
     async componentDidMount() {
      
     try {
+     
       const v = 0;
       const res = await fetch('http://127.0.0.1:8000/api'); // fetching the data from api, before the page loaded
       const todos = await res.json();
@@ -106,7 +122,7 @@ class Detail extends Component {
           });
         }
       }
-  
+      this.state.loading = 1;
     
     }
       );
@@ -118,11 +134,12 @@ class Detail extends Component {
   }
 
   render() {
- 
+    
     const visits = this.state.todos.length;
     const withMask = this.state.withmaskvisits;
     const noMask = this.state.withoutmaskvisits;
     const mon = this.state.monday;
+    const loading = this.state.loading;
     console.log(this.state.withmaskvisits)
     const weeklyVisitChart = {
       data: {
@@ -171,6 +188,7 @@ class Detail extends Component {
       <Grid container direction="column">    
       <Grid item>
         <Header/>
+        {(this.state.loading) ?  null: loadingMessage() }
       </Grid>
       <Grid item container>
         <Grid item xs={0} sm={2}/>
