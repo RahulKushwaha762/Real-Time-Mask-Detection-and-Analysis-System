@@ -18,6 +18,12 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
 }));
+const mystyle = {
+	color: "white",
+	backgroundColor: "DodgerBlue",
+	padding: "10px",
+	fontFamily: "Arial"
+  };
 
 const Header = () => {
 	const classes = useStyles();

@@ -19,6 +19,7 @@ function Navbar1() {
             <Grid item xs={0} sm={2}/>
             <Grid item xs={12} sm={8}>
             <h1 align="center">Real Time Mask Detection System</h1>
+            
             <h4 align="center">Admin Info</h4>
             <Grid container spacing={4}>
                   <Grid item xs={12} sm={6}>

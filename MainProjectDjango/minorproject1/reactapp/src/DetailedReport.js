@@ -127,7 +127,7 @@ class Detail extends Component {
     const weeklyVisitChart = {
       data: {
         labels: ["M", "T", "W", "T", "F", "S", "S"],
-        series: [[mon, this.state.t, 67, 17, 243, 218, 538]]
+        series: [[mon, this.state.t, this.state.w, this.state.th, this.state.f, this.state.s, this.state.su]]
       },
       options: {
         lineSmooth: Chartist.Interpolation.cardinal({
@@ -178,8 +178,7 @@ class Detail extends Component {
           <Content visits={visits} withMask={withMask} noMask = {noMask} maskdata = {maskData} weeklyVisitChart = {weeklyVisitChart} />
         </Grid>
         <Grid item xs={0} sm={2}/>
-        <Grid item xs={0} sm={2}/>
-        <Grid item xs={0} sm={2}/>
+        
       </Grid>
     </Grid>
     
