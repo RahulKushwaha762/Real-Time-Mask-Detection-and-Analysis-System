@@ -22,8 +22,8 @@ ageProto=join(dirname(__file__), "age_deploy.prototxt")
 ageModel=join(dirname(__file__), "age_net.caffemodel")
 ageNet=cv2.dnn.readNet(ageModel,ageProto)
 MODEL_MEAN_VALUES=(78.4263377603, 87.7689143744, 114.895847746)
-ageList=['Low', 'Low', 'Low', 'Medium', 'Medium', 'High', 'High', 'High']
-genderList=['Male','Female']
+ageList=['Low', 'Low', 'Low', 'Medium', 'Medium', 'Medium-High', 'High', 'High']
+#genderList=['Male','Female']
 
 prototxtPath=protoPath 
 weightsPath=weightPath
