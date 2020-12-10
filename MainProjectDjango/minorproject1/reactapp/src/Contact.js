@@ -25,11 +25,10 @@ export default function ContactUs() {
       <h1>Need some help?</h1>
       <h3>Contact us</h3>
       <form onSubmit={sendEmail}>
-        <label>First Name</label>
         <input type = "text" id ="fname" name = "user_name" placeholder ="Your Full Name"
          
         />
-        <label>Email</label>
+    
         <input type = "email" id ="email" name = "user_email" placeholder ="Email id"
          
          />
@@ -40,8 +39,7 @@ export default function ContactUs() {
       </div>
       <br></br>
       <br></br>
-      <p>For further queries contact us on..</p>
-      <center><a>varshneytanya16@gmail.com</a></center>
+      
     </div>
     </div>
       );

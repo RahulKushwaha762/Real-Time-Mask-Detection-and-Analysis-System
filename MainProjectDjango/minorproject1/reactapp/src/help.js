@@ -25,9 +25,7 @@ class Help extends React.Component {
     <h1 style={{overflow:'hidden'}}>Help Desk!</h1>
   
     
-      <form>
-          <input type = "text" id ="fname" name = "Search Your queries" placeholder ="Search"/>
-      </form>
+      
       <div className="body">
       <div className = "container">
         <div className = "box">
